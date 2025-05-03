@@ -5,7 +5,10 @@ const ul = document.querySelector('ul');
 ul.addEventListener('click', (e) => {
   e.preventDefault();
 
-  if (e.target.tagName !== 'A' && e.target.tagName !== 'IMG') {
+  const c1 = e.target.classList.contains('gallery__thumb');
+  const c2 = e.target.classList.contains('list-item__link');
+
+  if (!c1 && !c2) {
     return;
   }
 
